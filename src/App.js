@@ -5,15 +5,16 @@ import SmartHerbivore from './herbivore';
 import Plant from './plant';
 import Predator from './predator';
 import * as helpers from './helpers';
+import { valley } from './section';
 
 class Wall {};
 
 function App() {
     const legends = {
         "#": Wall,
-        "O": SmartHerbivore,
-        "*": Plant,
-        "@": Predator
+        "🐏": SmartHerbivore,
+        "🌳": Plant,
+        "🐆": Predator
     }
 
     return (
@@ -21,7 +22,7 @@ function App() {
             <header className="App-header">
                 <h1>CRITTERS WORLD SIMULATION</h1> 
                 <World 
-                    map={helpers.valley}
+                    map={valley}
                     height={helpers.valley.length}
                     width={helpers.valley[0].length}
                     legend={legends}

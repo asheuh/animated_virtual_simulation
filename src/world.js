@@ -13,7 +13,8 @@ class World extends Grid {
         this.actionTypes = new ActionTypes(this);
         props.map.forEach((line, y) => {
             for (let x = 0; x < line.length; x++) {
-                this.set(new Vector(x, y), helpers.elementFromChar(this.legend, line[x]));
+                const nline = [...line];
+                this.set(new Vector(x, y), helpers.elementFromChar(this.legend, nline[x]));
             }
         }, this);
     };

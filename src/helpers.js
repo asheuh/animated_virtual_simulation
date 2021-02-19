@@ -81,6 +81,8 @@ export const randomElement = (array) => array[Math.floor(Math.random() * array.l
 export const elementFromChar = (legend, ch) => {
     if (ch === " ") 
         return null;
+    if (ch === undefined)
+        return null
     var element = new legend[ch]();
     element.originChar = ch;
     return element;
